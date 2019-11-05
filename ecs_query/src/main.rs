@@ -36,9 +36,18 @@ fn main() {
 
     println!("Finished in {:?}", Instant::now().duration_since(start));
 
+
     for arn in clusters.cluster_arns.unwrap().iter() {
-        println!("{}", arn);
+        
+        println!("{}", split_last_string(&arn) );
     }
     
     
+}
+
+fn split_last_string(s: &String) -> String {
+    match s.rsplit("/").next() {
+        None => String::new(),
+        Some(elem) => String::from(elem),
+    }
 }
