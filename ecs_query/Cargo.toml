@@ -9,3 +9,5 @@ edition = "2018"
 [dependencies]
 rusoto_core = "0.41.0"
 rusoto_ecs = "0.41.0"
+futures = "0.1.16"
+error-chain = "0.12.0"
